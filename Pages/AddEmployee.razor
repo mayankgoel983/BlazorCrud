@@ -1,0 +1,46 @@
+﻿@page "/addemployee"
+@using BlazorCrud.Data;
+<h3>Add Employee</h3>
+
+<EditForm Model="@obj" OnValidSubmit="CreateEmployee">
+    <DataAnnotationsValidator/>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Name" class="control-label">Name</label>
+                <InputText id="Name" form="Name" class="form-control" @bind-Value="@obj.Name" />
+                <div class="col-md-5"><ValidationMessage For="@(() => obj.Name)" /> </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Age" class="control-label">Age</label>
+                <InputNumber form="Age" id="Age" class="form-control" @bind-Value="@obj.Age" />
+                <div class="col-md-5"><ValidationMessage For="@(() => obj.Age)" /> </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="Position" class="control-label">Position</label>
+                <InputText form="Position" id="Position" class="form-control" @bind-Value="@obj.Position" />
+                <div class="col-md-5"><ValidationMessage For="@(() => obj.Position)" /> </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="City" class="control-label">City</label>
+                <InputText form="City" id="City" class="form-control" @bind-Value="@obj.City" />
+                <div class="col-md-5"><ValidationMessage For="@(() => obj.City)" /> </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Add" />
+            </div>
+        </div>
+    </div>
+</EditForm>
+
